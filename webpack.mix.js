@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,16 +11,23 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/site.js', 'public/js')
+mix.js("resources/js/site.js", "public/js");
 
-mix.postCss('resources/css/tailwind.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss/nesting'),
-    require('tailwindcss'),
-])
+mix.postCss("resources/css/tailwind.css", "public/css", [
+    require("postcss-import"),
+    require("tailwindcss/nesting"),
+    require("tailwindcss"),
+]).browserSync({
+    proxy: "http://coffee-roasters-demo.test/",
+    files: [
+        "public/css/*.css",
+        "public/js/*.js",
+        "./resources/**/*.antlers.html",
+    ],
+});
 
 if (mix.inProduction()) {
-   mix.version();
+    mix.version();
 }
 
 /*
