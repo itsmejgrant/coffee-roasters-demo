@@ -1,3 +1,12 @@
-<article class="mt-4 bg-white p-8 shadow-xl rounded-xl max-w-xl prose">
-	{{ content | widont }}
-</article>
+<section class="container max-w-7xl mx-auto py-16">
+	<h3 class="text-2xl font-bold pb-3">Our Finest Roasts</h3>
+	<ul class="grid grid-cols-3 gap-6">
+		{{ collection:coffees }}
+		<li>
+			<img class="w-full object-cover mb-2" src="{{ glide:image width="600" height="450" }}"/>
+			<h4 class="text-3xl font-medium py-2">{{ title }}</h4>
+			<p class="text-gray-700">{{ excerpt }}</p>
+		</li>
+		{{ /collection:coffees }}
+	</ul>
+</section>
