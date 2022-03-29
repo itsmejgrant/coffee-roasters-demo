@@ -5,14 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{{ title ?? site:name }}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
 	</head>
-	<body class="bg-gray-100 font-sans leading-normal text-gray-800">
+	<body class="bg-gray-100 font-sans leading-normal text-dark">
 		{{ partial:header }}
-		<div class="relative">
-			<div class="absolute inset-0 bg-black bg-opacity-50 mix-blend-soft-light z-1"></div>
-			<img class="w-full" src="{{ glide:featured_image width="1920" height="600" }}"/>
-		</div>
 
 		<main>
 			{{ template_content }}

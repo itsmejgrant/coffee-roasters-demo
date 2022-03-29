@@ -1,0 +1,18 @@
+<div class="relative">
+	<div class="absolute inset-0 bg-white bg-opacity-10 mix-blend-multiply z-1">
+		<h2 class="max-w-6xl mx-auto text-dark h-full flex justify-center transform -translate-y-12 relative flex-col text-7xl">
+			{{ title }}
+		</h2>
+
+	</div>
+	<img class="w-full" src="{{ glide:featured_image width="1920" height="800" }}" alt="{{ featured_image.alt }}"/>
+</div>
+
+<section class="py-16 max-w-6xl mx-auto">
+	<h2 class="text-4xl font-medium mb-12">What We're Brewin'</h2>
+	<ul class="grid grid-cols-3 gap-6">
+		{{ collection:coffees }}
+		{{ partial:coffee_card }}
+		{{ /collection:coffees }}
+	</ul>
+</section>

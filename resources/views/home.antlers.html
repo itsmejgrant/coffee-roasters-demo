@@ -1,12 +1,35 @@
-<section class="container max-w-7xl mx-auto py-16">
-	<h3 class="text-2xl font-bold pb-3">Our Finest Roasts</h3>
+<div class="relative">
+	<div class="absolute inset-0 bg-white bg-opacity-10 mix-blend-multiply z-1">
+		<h2 class="max-w-6xl mx-auto text-dark h-full flex justify-center transform -translate-y-12 relative flex-col">
+			<div class="text-7xl">Brewed strong.</div>
+			<div class="font-medium text-8xl">Everytime.</div>
+		</h2>
+
+	</div>
+	<img class="w-full" src="{{ glide:featured_image width="1920" height="800" }}" alt="{{ featured_image.alt }}"/>
+</div>
+
+<section class="container max-w-6xl mx-auto py-32">
+	<h3 class="text-4xl font-medium">{{ top_product_title }}</h3>
+	<a href="{{ top_product_link_url }}" class="font-medium flex justify-end text-right py-3 relative em-dash">{{ top_product_link_name }}</a>
 	<ul class="grid grid-cols-3 gap-6">
-		{{ collection:coffees }}
-		<li>
-			<img class="w-full object-cover mb-2" src="{{ glide:image width="600" height="450" }}"/>
-			<h4 class="text-3xl font-medium py-2">{{ title }}</h4>
-			<p class="text-gray-700">{{ excerpt }}</p>
-		</li>
-		{{ /collection:coffees }}
+		{{ coffees }}
+		{{ partial:coffee_card }}
+		{{ /coffees }}
 	</ul>
+</section>
+
+<section class="pb-32 container max-w-6xl mx-auto grid grid-cols-3 gap-6">
+	<h3 class="text-4xl leading-tight font-medium h-fit w-1/2">{{ category_links_title }}</h3>
+	<div class="col-span-2 w-2/3 flex flex-col gap-3 text-gray-600 h-fit mb-3">
+		{{ category_links_description }}
+	</div>
+	<div class="relative">
+		<a href="{{ category_one:0:url }}" class="font-medium flex justify-end text-right py-3 mr-6 relative em-dash">{{ category_one:0:title }}</a>
+		<img class="w-full h-full object-cover" src="{{ glide src="{{ category_one:0:image:url }}" width="600" height="600" }}" alt="{{ category_one:0:image:alt }}"/>
+	</div>
+	<div class="relative col-span-2 h-full">
+		<a href="{{ category_two:0:url }}" class="font-medium flex justify-end text-right py-3 mr-6 relative em-dash">{{ category_two:0:title }}</a>
+		<img class="w-full h-full object-cover" src="{{ glide src="{{ category_two:0:image:url }}" width="600" height="300" }}" alt="{{ category_two:0:image:alt }}"/>
+	</div>
 </section>

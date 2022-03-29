@@ -1,0 +1,166 @@
+title: Homepage
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: featured_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: 'Featured Image'
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+  top_products:
+    display: 'Top Products'
+    fields:
+      -
+        handle: top_product_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Top Product Title'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: coffees
+        field:
+          max_items: 3
+          mode: default
+          create: false
+          collections:
+            - coffees
+          display: Coffees
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - 'min:3'
+      -
+        handle: top_product_link_name
+        field:
+          input_type: text
+          antlers: false
+          default: 'See all'
+          display: 'Top Product Link Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: top_product_link_url
+        field:
+          display: 'Top Product Link URL'
+          type: link
+          icon: link
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  category_links:
+    display: 'Category Links'
+    fields:
+      -
+        handle: category_links_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Category Links Title'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: category_links_description
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          link_collections:
+            - coffees
+          reading_time: false
+          fullscreen: false
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: 'Category Links Description'
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: category_one
+        field:
+          mode: default
+          create: true
+          taxonomies:
+            - categories
+          display: 'Category One'
+          type: terms
+          icon: taxonomy
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: category_two
+        field:
+          mode: default
+          create: false
+          taxonomies:
+            - categories
+          display: 'Category Two'
+          type: terms
+          icon: taxonomy
+          listable: hidden
+          instructions_position: above
+          read_only: false

@@ -1,6 +1,8 @@
 title: Coffees
-template: default
+template: coffees/show
 layout: layout
+taxonomies:
+  - categories
 revisions: false
 route: '{slug}'
 sort_dir: asc

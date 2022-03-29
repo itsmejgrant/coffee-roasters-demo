@@ -1,1 +1,8 @@
-/* This is all you. */
+.em-dash {
+    @apply relative pr-10;
+}
+
+.em-dash::after {
+    content: "";
+    @apply absolute top-1/2 right-0 transform w-7 h-[2px] bg-dark;
+}

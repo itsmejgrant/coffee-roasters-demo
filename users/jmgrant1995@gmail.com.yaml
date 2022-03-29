@@ -1,4 +1,4 @@
-name: "Joe Grant"
+name: 'Joe Grant'
 super: true
 id: 93553f83-2e95-436a-81b8-c71b9a626dff
 password_hash: $2y$10$Isi9oMegh23lNJ6wmjWfQuoHlTANrOPo4IYELDfK5J7efhvuUPZcq
@@ -9,3 +9,6 @@ preferences:
         - title
         - slug
         - image
+  assets:
+    assets:
+      mode: grid
